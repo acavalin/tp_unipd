@@ -2,7 +2,11 @@
 Collezione di scripts [Tampermonkey](http://tampermonkey.net) per gli applicativi
 dell'universita' di Padova.
 
-Vedere il `README.xxx.md` relativo allo script `xxx` desiderato.
+Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
+
+* [otrs](README.otrs.md)
+* [verifica LA/TL](README.verifica.md)
+* [EasyStaff](README.easystaff.md)
 
 ## Installazione di uno script su Firefox e Chrome
 
