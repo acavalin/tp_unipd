@@ -5,8 +5,8 @@
 // @include     https://helpdesk.ammcentr.unipd.it/otrs/index.pl*
 // @include     https://helpdesk.ammcentr.unipd.it/otrs/customer.pl?Action=CustomerTicketZoom*
 // @icon        data:image/png;base64,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
-// @downloadURL https://github.com/acavalin/tp_otrs_enhancements/raw/master/helpdesk.user.js
-// @version     5.2.1
+// @downloadURL https://github.com/acavalin/tp_unipd/raw/main/otrs-helpdesk.user.js
+// @version     5.2.4
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -104,7 +104,7 @@ function setup_admin ($) {
 
   // riquadro credits + links
   var links_hp     = '<a href="https://acavalin.com/" target="_blank">A.Cavalin</a>',
-      links_script = '<a href="https://github.com/acavalin/otrs_enhancements" target="_blank">OTRS script</a>',
+      links_script = '<a href="https://github.com/acavalin/tp_unipd" target="_blank">OTRS script</a>',
       links_css    = 'position: absolute; top: 0.5rem; left: 43%; padding: 0.3rem 0.6rem; z-index: 65000;'+
         'background: linear-gradient(to bottom, rgb(249, 249, 249) 0%, rgb(241, 241, 241) 100%);'+
         'border-radius: 0.5rem; border: 1px outset red;';
