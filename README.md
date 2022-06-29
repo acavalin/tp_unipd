@@ -4,7 +4,7 @@ dell'universita' di Padova.
 
 Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 
-* [otrs](README.otrs.md)
+* [OTRS](README.otrs.md)
 * [verifica LA/TL](README.verifica.md)
 * [EasyStaff](README.easystaff.md)
 
