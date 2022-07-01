@@ -5,7 +5,7 @@
 // @include     https://gestionedidattica.unipd.it/Aule/index.php*
 // @icon        data:image/x-icon;base64,R0lGODlhEAAQAMQAAP/////39/f39/fv7+/v7/fe3t7e3ua9vb29va2trdaclJycnISEhHt7e71aSmNjY7VCKVJSUkJCQjo6OjExMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAQABAAAAVkICCOZCkeSqoEJulAMFS041vcY0PtUSK+pZ1w94tBAIydD7CgFB1QQIQ4IhRJj90kYa0dR4ghZdJ9QR0DpJgiALxiM4AgkVW2DKQwZdGKNEYJOwh9PBI7EjQJE0MRNCMCBngjIQA7
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/easystaff.user.js
-// @version     1.0.1
+// @version     1.1.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -26,7 +26,9 @@
 
       $(".infoBox[id='"+box_id+"']").find('p + ul').each(function (ul_idx) {
          var lbl_strutt = $(this).prev().text().replace('Struttura didattica: ', '').trim();
-         csv_text += "\n" + $(this).children('li').map(function () { return lbl_scuola + "\t" + lbl_strutt + "\t" + $(this).text() }).get().join("\n");
+         csv_text += "\n" + $(this).children('li').map(function () {
+           return lbl_scuola + "\t" + lbl_strutt + "\t" + $(this).text() + "\t" + $(this).text().substr(-7,6);
+         }).get().join("\n");
       });
 
       return csv_text.trim();
