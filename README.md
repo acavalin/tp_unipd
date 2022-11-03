@@ -7,6 +7,7 @@ Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 * [OTRS](README.otrs.md)
 * [verifica LA/TL](README.verifica.md)
 * [EasyStaff](README.easystaff.md)
+* [Planet Time](README.planet-time.md)
 
 ## Installazione di uno script su Firefox e Chrome
 
