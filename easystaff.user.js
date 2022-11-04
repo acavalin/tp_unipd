@@ -5,7 +5,7 @@
 // @include     https://gestionedidattica.unipd.it/Aule/index.php*
 // @icon        data:image/x-icon;base64,R0lGODlhEAAQAMQAAP/////39/f39/fv7+/v7/fe3t7e3ua9vb29va2trdaclJycnISEhHt7e71aSmNjY7VCKVJSUkJCQjo6OjExMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAQABAAAAVkICCOZCkeSqoEJulAMFS041vcY0PtUSK+pZ1w94tBAIydD7CgFB1QQIQ4IhRJj90kYa0dR4ghZdJ9QR0DpJgiALxiM4AgkVW2DKQwZdGKNEYJOwh9PBI7EjQJE0MRNCMCBngjIQA7
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/easystaff.user.js
-// @version     1.1.0
+// @version     1.1.1
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -15,6 +15,16 @@
 //jQuery.noConflict();
 
 (function ($) { $(function () {
+  // riquadro credits + links
+  if ($('#acavalin').length == 0) {
+    var links_hp     = '<a style="text-decoration: underline !important;" href="https://acavalin.com/" target="_blank">A.Cavalin</a>',
+        links_script = '<a style="text-decoration: underline !important;" href="https://github.com/acavalin/tp_unipd" target="_blank">ES script</a>',
+        links_css    = 'position: absolute; top: 0.5rem; left: 43%; padding: 0.3rem 0.6rem; z-index: 65000;'+
+          'background: linear-gradient(to bottom, rgb(249, 249, 249) 0%, rgb(241, 241, 241) 100%);'+
+          'border-radius: 0.5rem; border: 1px outset red;';
+    $('<div id="acavalin" style="'+links_css+'">'+links_script+' by '+links_hp+'</div>').appendTo('body');
+  }//if
+  
   $.er_enh = {}
 
   // EasyRoom
