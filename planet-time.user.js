@@ -5,7 +5,7 @@
 // @include     https://presenze.ict.unipd.it/pta/cartellino.aspx*
 // @icon        data:image/png;base64,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
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/planet-time.user.js
-// @version     1.3.0
+// @version     1.4.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -30,6 +30,12 @@ var icons = {
   ECCE:  "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD5SURBVDiNrdMxTkJBEAbgbwnnoHwHUBMaboAXwITEwgOQeAC9ADewoKI2UW5AQ6IXoKK2sKQdC+aZh/AwBieZ7O788/87uztbIkLTSikVbnCZDu/p84hY7xEiQooUTLDFClOM0qcZ22ZO+eY1yAt8YlyDPx3jzFnUIjUwSaDXRm6I9DJ3Uh+/ytIOdsYQw5ZKtsn1iFXLbjPMWrAVHjp500t/tyWuuikwr6OllGvc5fIiY8+5foqI15y/YdQ9ovyBTc6rHDcNbM8KXrCOiPsDsJQZRMTtEWyKqmPXYYMjlfxmA7tjnHzGPvonn/HsRvqXVj7nM5Vzv/MXUAYjnPJ0Bd4AAAAASUVORK5CYII=",
   // https://www.flaticon.com/free-icon/minus_992683
   DEB: "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADjSURBVDiNrdOxTQNRDAbg70WZI+UtABJNFkBigSClY4CTWIAFbgPqLABhgjSRYIFU1CkorzVFfHBEnMTpsPRLT7b//9nv2SUi9K2UUuEWFwl4S2wi4vCDEBFSpKBGiz0arBJN+trMKV+8HnmLD6y74DmwzpxtJ9IF6gwshsg9kUXm1l37VZY2ePNAJS2qggdcR8SVEVZK2eNlli+9G0NO2+FyngKbnvIN7gZIjxHxnOdXrOa/JB3xPiBwPHcUPOEQEfd/Kvy70gbVzGnClmPIaUunNqZ94/RB+pdRnrJMZeo6fwIEkQxurB5IhAAAAABJRU5ErkJggg==",
+  // https://www.flaticon.com/free-icon/lifespan_8160673
+  tb_moi:   "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAcNJREFUSIm11TtoFkEUBeDP3wQior9iRJCA+EAtxCaIpSCCWIoRTCdaiAhWPpMmYCGorQixUgtfoBapJKAWNkogKEIKLbTQBNSEFAkqGIuZwO9mZ3YRc5plzp07Z87M3TssMpYk+F24jO8lsQaW4gh+/KvwNWzOxC9gd52FGgm+DbOZvFm01xEoHtFWnMJejGImkbcDX/EaV2WOqijwCOfwrc7ucEhwciM1oa0w/oX3eKj8glsxhqc4nJtUFJjHHE5k8lbhFQ5gXeQG8bmuQA7dGMBJwW0THcIxXRdcVQqsjgsV0Y4+3MFzrIncG9wWXI/hU5XAEPaV8PtxJe7yN3ZiU3TyGO9wGmeqBCYF20V04EOB68YevMBPbGgNpgSO41IJPxVFGtHBCDZiZYwvFwqkUmACwyX8dqzF2ziexM2W+Ay+JNYE9+P3QSK+Ak/QY2GbOYh72NJKphw0MyJNHMNHjKNT6E29uCtceKVATyZGKOOjQhWtx0tctLAAkouM4FlGgHCx/UKrGEhNSgmMyrcK0kf4F1LvwX9DysE2nK/InauIlwrMv1K9WFaRewtdwt9bW2BIKLXpOrsTWvXZmnMXB38AHZJQ+0VcKSkAAAAASUVORK5CYII=",
+  // https://www.flaticon.com/free-icon/holidays_3634857
+  tb_ferie: "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAsQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHlSURBVEiJtdVPiM1RFAfwz7x5M1OaYaGJ0UwIMSZjwQZbC0oRCmFhirJUNnYWU1YUNv4spCmymFAWlAVN/r9BkiQWJJSQiVIWM4t7n3f79Xtp5v3mW7+633PO+553zz3nXmroQAVP0F4AB00oYQPWYG60fY7+RvgD3CzjHH5jTLHYiC0wGg0deIxHaltuhMNoE15hb8H/voqhMjpxYJoSdBJOfrpQKRUk1I0FeY5yAeLHsDhqvcPhySRYiX3oi/wtLmEk8m4siva/WIH5eF8VqFeiNpzEdbRiNg7hAvbjSowZT3Ra43o8FcrbQRPOowcncAq9uJisx7Acz4SypCX68L8E2/FN6K7vwuHtFK6BrViPn0n8EaFUzZLSpMi26W3MwW48Fyb9aUwwWeS2aS+uYjOGsQ5fMXMKCUKWDB/GwoxtE05PRTvvDLZleA9mYJdQ5z/4iE+4gy/RX8KvrFi9OWjGHgzEH43gcoy/hnkx8VCMLQkDdyt3Gxneh7s4KvR/Fe3C/T4Lq5LvIF4KD0x/nvZ9YQJhtXCfL62zs7boP5t8NzCIJXiItTG2H/eodc1r4anrqiNOeFYHMrZmnInrLmHQ3kTNZWngoND7jWIHjuc5KmgpIEELXlRJ2kU/hIMqAv+ukgmqWHAOmIzIrAAAAABJRU5ErkJggg==",
+  // https://www.flaticon.com/free-icon/iftar_2918130
+  tb_pasto: "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAsQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAH3SURBVEiJ7dRNiI5RFAfw3zumeGlGk48ZJvkMoVkYaQwp5CNDaiQTSUlJIYWFspFSsrGiFIqVlI0pJbGZzVj4iEKUSDOb8VEYM8qMxb1P83i98zzY8t/cc87zv+d/7nnOvfxHDgpxrUN9DrcHr3M483EGfTiFjkTgDu7lbF6PhpRfhQnR/opuTENFLHYvtlVGQi+OYjBDYEHKHocbeBz9LpzGHqErAzgOicB7LMfnkqSPMCNWW5GKJ0k+RL+I5ljkT0gEutEaK0kwiJdowlT0p771CC0bn8pzCbezBJ6UI+ByFKhNxXZhJ75FfyAK/IJEoAuTyhEiJsciEqzBWmFaMpE+QXMGbwo+oSb6R4S+F3Py96YFhjvBTBzDMyzLSViKOVkCS7Ea61AtTNqrPxSoTwS+YEy0Rwq3cTouCvM9Go3YiDYcwtuc5LV4U0gF2rEpJu3EWYzFSRzA98hbhJt4gI8ZAg3Ynw60o0V4QxbjYIxXxXUHtkS7FScyki/BNRiB2ViJFdiMu8J09WEuZgmP2FM8xIYoug/vIqfaUMuaovh29BdwH1czqknwHC+iQClasFtoZRGHxWekElewCgvRkSHQWCY2T7gfncKg1MTKy+K8MB01wxFSGCX8j1uGpm8iLpQSCyX2VuG4db8hUg7ncP0v9/6r+AGE1mD1QkGvjQAAAABJRU5ErkJggg==",
 };
 
 // mappa giustificativo-icona
@@ -54,9 +60,29 @@ function setup_cartellino () {
     $('<div id="acavalin" style="'+links_css+'">'+links_script+' by '+links_hp+'</div>').appendTo('body');
   }//if
   
-  // mostra di default il tab totalizzatori
-  $('#pageFooter_C0, #pageFooter_C2').toggle();
-  $('#pageFooter_T0, #pageFooter_T2, #pageFooter_AT0, #pageFooter_AT2').toggle();
+  // mostra per default contenuto del tab totalizzatori
+  if ($('#pageFooter_C2').is(':hidden')) {
+    $('#pageFooter_CC > div').hide();
+    $('#pageFooter_C2').show();
+  }//if
+  
+  // mostra totali in alto
+  var moi = $("#lblTotalizzatori tr td:first-child:contains('MO02')").parent().children().last().text();
+  var pasti = $("#lblTotali td:contains('Buoni pasto maturati')").parent().children().last().prev().text();
+  var ferie = [];
+  $.each(['FE03', 'FE02', 'FE01'], function () {
+    ferie.push( $("#lblTotalizzatori tr td:first-child:contains('"+this+"')").parent().children().last().text().replace(',00', '') );
+  });
+  $('#tb > ul .dxm-alignSpacing').
+    css('vertical-align', 'middle').
+    css('font-family', 'monospace').
+    html(
+      '<div style="background-color: #ddd; display: inline-block; border: 1px inset black; padding: 0.1rem; padding-right: 1rem; border-radius: 0.5rem">'+
+      icon_tag('tb_moi'  , 'MOI anno corrente')+' '+moi+' '+
+      icon_tag('tb_ferie', 'FERIE corrente + precedente + scad.30-06')+' '+ferie.join('+')+
+      icon_tag('tb_pasto', 'Buoni pasto maturati')+' '+pasti+
+      '</div>'
+    ).find('img').css('vertical-align', 'text-bottom').css('margin-left', '1rem');
   
   // imposta un'altezza fissa al cartellino centrale
   $('div.dxgvCSD').css('overflow', 'auto').css('height', '50vh');
