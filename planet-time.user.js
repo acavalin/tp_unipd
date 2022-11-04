@@ -5,7 +5,7 @@
 // @include     https://presenze.ict.unipd.it/pta/cartellino.aspx*
 // @icon        data:image/png;base64,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
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/planet-time.user.js
-// @version     1.0.0
+// @version     1.1.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -16,7 +16,8 @@ var icons = {
   // https://www.flaticon.com/free-icon/dinner_2648958
   pasto: "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKGSURBVDiNpZFLSFRRHMa/+5q5+WB0Zix8jE75SomKCLGEFlam2ANCIkxLUgPbRGFUWi2SShMiiVYiUeKmbRZBEtYiDCoxelhjTqM5Ts7beTRzzz33ttFhBpEWfptzOP/z/c7//x1gjWLOtLW1iILw1eMLHGMYMIOPHp77n6m0dMtpk9lc99tmfcaHgqEyLk1n8fu825fqWjGruFOrN+3jk/V6KDJLwn6X5J4ZiTgsXWazuaKppbn3VFOzfn/lngVeIpJRy3E2AJCpzKUU7n6bWdu+TczI5eIeLYy6ZsvsT7trGcVtra9v1C8XeCKRpED474S4ThQsFovW3HCfJT471HcDWG/QgUgRuP1hMIXVXF7D3R3z/SdzBY0mRuazTTm3Pk98eqLPyEBW2WHxp98B4/xrtN7oAccLAAAqEwzcuQ6XpgrZOw8Y4vNgH/T1vfH6vC90hkx11lTLCFMjaL18M2YGAI4X0HypC9y3YTAMwyQAljcKw2oAwJiWnGCOQTge6amaFec8AMC5mP/r1agmWlMBhdJVv09VVCA9D0frTgRLdMkLUadXYQEgS+ZTq+0KJwfdcPmDoDJZYSbRCDyLYagFlZgcHw8cGZ3fJDs8LBt/SaFEUUoOYqDnGiiVE8z93R2gRTWIumdp0P8nNiMfD3A8v2ctOPs435m9F71XL8KYlgIiReALEShF1RB0G2Abav+Yw4iTABoTQgSAiMvaYRu68IESibLlLfBsPo7A1iZwu1pBFUptg+ffB+amDgFQEjqYcTtmxvjUTFD6JfBjrJyEOq+IhtwqLsVohKqAhrzOyILtZcTx/TYAmbBJ08PROR9R6fQySASwcdX4V4oBULy0rk3/AB/7ClwZFysKAAAAAElFTkSuQmCC",
   // https://www.flaticon.com/free-icon/sun-umbrella_2914050
-  ferie: "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAImSURBVDiNY2AgERQEiich8xmJ1VgVKm3AyPz/7cMX3yfJS3Dm/f/NJNi29sklJmINYGT+//b9519hjIyM/z5+/RXOyPrvPQMDAwMzsiIZRR29Tx9evUTXXBgoGv/s3e+C77//y8Q6CgYfvfHt589f/1zs9Xg5kL3ALi4idl+S6e+LH3wCkqaWVnfu3r177NixYw0MDAzfqyOkZD9++Rn5+uNfSwlBtmM8XCwrWlc8e8zEwMDAIMLFICnNzXW/sDBfMEtBSqucm4mb68tHldbW1lJnZ+fTPDw8oty8jJz8POzLGZkY2Xm4WFb8/PmXH261CT/PwUAd9SdPnz79H2Rr83mLqeb/bk35b0mRER/Dw8OfaGhoVMHUZnoLx6D4j5uVQb9cSfproJH+0zNnzvzPzcn9lqso9cNeiP+SGj9vKwMDAz8DHsAizcYZqc/PxXX565dP8+fPf3Xx4qXrN78x8bx+99GUgYHhP8Ho0eLl7HYS4b+tLcg/i4GBQYqBgYFBTEb5kIqKOR9BzVDAw8DAwIIsIKtsECCtoDWdWAOwAjFppRPEqMOZEtnYOE/LqRvF4JKHAXhCYmdnUFGUkUgXFuTS5uflEGJlYeb7z8DEz8LM+P3//3/fv3//9f3zt58v3r7/euvG3VeTGBgYHsEM4NFWlVxrrCtr7GqrLiwpij/sPn7+wXDgxO2Xu4/euHjjzqsIRhEBHgc+PvYcYvyLDj59+jkFAKUqtyvCgv6zAAAAAElFTkSuQmCC",
+  ferie1: "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAImSURBVDiNY2AgERQEiich8xmJ1VgVKm3AyPz/7cMX3yfJS3Dm/f/NJNi29sklJmINYGT+//b9519hjIyM/z5+/RXOyPrvPQMDAwMzsiIZRR29Tx9evUTXXBgoGv/s3e+C77//y8Q6CgYfvfHt589f/1zs9Xg5kL3ALi4idl+S6e+LH3wCkqaWVnfu3r177NixYw0MDAzfqyOkZD9++Rn5+uNfSwlBtmM8XCwrWlc8e8zEwMDAIMLFICnNzXW/sDBfMEtBSqucm4mb68tHldbW1lJnZ+fTPDw8oty8jJz8POzLGZkY2Xm4WFb8/PmXH261CT/PwUAd9SdPnz79H2Rr83mLqeb/bk35b0mRER/Dw8OfaGhoVMHUZnoLx6D4j5uVQb9cSfproJH+0zNnzvzPzcn9lqso9cNeiP+SGj9vKwMDAz8DHsAizcYZqc/PxXX565dP8+fPf3Xx4qXrN78x8bx+99GUgYHhP8Ho0eLl7HYS4b+tLcg/i4GBQYqBgYFBTEb5kIqKOR9BzVDAw8DAwIIsIKtsECCtoDWdWAOwAjFppRPEqMOZEtnYOE/LqRvF4JKHAXhCYmdnUFGUkUgXFuTS5uflEGJlYeb7z8DEz8LM+P3//3/fv3//9f3zt58v3r7/euvG3VeTGBgYHsEM4NFWlVxrrCtr7GqrLiwpij/sPn7+wXDgxO2Xu4/euHjjzqsIRhEBHgc+PvYcYvyLDj59+jkFAKUqtyvCgv6zAAAAAElFTkSuQmCC",
+  ferie2: "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEwSURBVDiNldK9K8VhGMbxz0FESl5OXjbJ4m1BXhZmC3+ASSaTkYkJk10Gk4FBlAxGiYFSZLAYFIpSIpIjhuc59Us6zrmWX7+n57ru+/4+N4WrL/lTVICxEVUYiN8GKC4goBjdSKMEN/hI/brUhLs/zL0YxDcu0Y5PnCQDyrAbA5qxjyes4T223YM2XOAMz1kG9TjEHjYwH6vtYAF1cYRTVERzeZLBHK6wiEmsxqqjSAnAjvARW7/GazagE2+owQFa0YFhPGAFx4lRb5NwSjCEdYHwdKxWhak4Rk5lGcziBZuYwSNK/zNnVRk7SaoL4/mYiwQYmV/n5wKbf5VrE9PCbtznCkguUgtGhDf/iuFlwtNlhDEzAqstYZURGCxhArV5dF0X7y6jOoV+jOVh/EvbP2GZOufKRrgrAAAAAElFTkSuQmCC",
   // https://www.flaticon.com/free-icon/work-from-home_3015422
   smart: "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAL2SURBVDiNfZJbbNN1FMc/v///9///t871xtpR0su6waTuAl6yrg5nSMCZPSjGiE+STGdi1DeScQ2YmBjAOCNR44PG4AsYL1z6QAhIYLIoDAxuWbxsSjMKc12xbKXr2o3/3weFrCx4nk7O5ZPzPeeo/I91BsLtz/mWf9fkcMcuZlJHAfPeGnmfXtld23DgaU/NM9q8qdUYFeEqwxb9OZvqiicTZxcWqvd2rvME12zw15541Vv/5ICrTKnZuVm/JOYIJdPlLQ7vi5oqWwan0t/emWYhQHaHGz7f6K9/O2TYXQPRiHzlo/1qsDbMqvYnRLE5IvsvDSjduifis9tf0hV9+I9c5k8B8Hz1iuhKt+vgRlcwFHco82u39+j9p78kN9oHlolQdSr8q+nq6eXgnn1Un/qhIFUxdzI1dkQFiFQ6trTbl7b+vq61rGt/r/QF/Hx/aC/PNley0ldBwClZQopTPw7RteMdZpsisu98f0FL3/QoAInczZPvi8zpTbt3Ck3TACiYKsNXsxwdyvHV4CwzBZOpxEUAGh97hPK1bePHJhOfSICfspl4x7LH2xYu0xmO4vbOszXWyPWJDF98fRwhpu/mhRDmL7mpvcr9fsDl8bG+rZnhkSRhvxepKNhDjy6+d7gusklV5MNjibHW997dB4CiqnR0PMVn8QPUeW0MDI1gWxLg5Z7exYDl9U1bYm3rHwKw/gvetuDI4cPkbgmmx0c4P3qDN7fvwbIshBAlAEUISwH469oof6dGmSsWAOgbnCQdep3LhQhy9Rt8fOY2r237gLGryVLA3aUoguJcEdP6993L3WEq3H5ssW1U1ndS6Wtk1hXjw08PlUq441T76hbpy9+4ggWUOf2M/3qWF5xxJub1UsDIb8N6fiaflqparkhps0wT00JMpK5bD4oLonNNI9cmswQjDxBtaOGbc1dKAGLpsuAuTdPtALphOKTUnQC5W9OZQJVe9FW5FM0wdF03dE03tGR6JociszP5/NS5vjNv/QPq8/x1CGujTQAAAABJRU5ErkJggg==",
   // https://www.flaticon.com/free-icon/absent_4753030
@@ -31,9 +32,9 @@ var icons = {
 
 // mappa giustificativo-icona
 var giust_icons = {
-  RICOM:   'ferie',
-  FERIE:   'ferie',
-  FLEXEP:  'ferie',
+  FERIE:   'ferie1',
+  RICOM:   'ferie2',
+  FLEXEP:  'ferie1',
   TELAV:   'smart',
   AGIL:    'smart',
 }
@@ -45,45 +46,56 @@ function setup_cartellino () {
   $('div.dxgvCSD').css('overflow', 'auto').css('height', '50vh');
 
   // mostra icona del buono pasto
-  $('#gvCartellino_DXMainTable tbody tr.dxgvDataRow_MaterialCompact div.pasto').
+  $('#gvCartellino_DXMainTable tbody tr.cart_cell div.pasto').
     replaceWith(icon_tag('pasto', 'buono pasto maturato'));
 
   // compatta giorno + monospace
-  $('#gvCartellino_DXMainTable tbody tr.dxgvDataRow_MaterialCompact td:nth-child(2)').
+  $('#gvCartellino_DXMainTable tbody tr.cart_cell td:nth-child(2)').
     css('font-family', 'monospace').
-    each(function (i) { $(this).text( $(this).text().trim().replace(' ', '').substr(0,3)+' ' ); });
+    each(function (i) { $(this).text( $(this).text().trim().replace(' ', '').substr(0,3) ); });
   
   // mostra icone per l'assenza (ferie/recupero/TL/agile)
-  $('#gvCartellino_DXMainTable tbody tr.dxgvDataRow_MaterialCompact td.dxgvPHEC').each(function (i) {
+  $('#gvCartellino_DXMainTable tbody tr.cart_cell td.dxgvPHEC').each(function (i) {
     var el = $(this),
         giustificativi = [el.prev().text().trim(), el.text().trim()],
         gg = el.parent().find('td:nth-child(2)');
     
-    if (giustificativi[1].length > 0)
-      // mostra errore se c'é piú di un giustificativo
-      gg.append(icon_tag('warn', giustificativi.join(', ')));
-    else {
+    //if (giustificativi[1].length > 0)
+    //  // mostra errore se c'é piú di un giustificativo
+    //  gg.append(icon_tag('warn', giustificativi.join(', ')));
+    //else {
+    //  // mostra icona del giustificativo se presente
+    //  var giust_key = giustificativi[0].slice(4);
+    //  if (giust_key) {
+    //    var icon_name = giust_icons[giust_key] || 'assen';
+    //    gg.append(icon_tag(icon_name, giustificativi[0]));
+    //  }//if
+    //}//if-else
+    // mostra errore se c'é piú di un giustificativo
+    gg.append(giustificativi[1].length > 0 ? '!' : ' ');
+    // mostra icone dei giustificativi se presenti
+    $.each(giustificativi, function () {
       // mostra icona del giustificativo se presente
-      var giust_key = giustificativi[0].slice(4);
+      var giust_key = this.slice(4);
       if (giust_key) {
         var icon_name = giust_icons[giust_key] || 'assen';
         gg.append(icon_tag(icon_name, giustificativi[0]));
       }//if
-    }//if-else
+    });
   });
 
   // metti icone al posto dei codici
   $.each(['ECCE', 'PPAUM', 'ORDI'], function (i, key) {
-    $('#gvCartellino_DXMainTable tbody tr.dxgvDataRow_MaterialCompact td:contains('+key+')').each(function () {
+    $('#gvCartellino_DXMainTable tbody tr.cart_cell td:contains('+key+')').each(function () {
       $(this).
         text( $(this).text().replace(key, '') ).
         prepend(icon_tag(key, key));
     });
   });
-  $.each(['TELAV', 'AGIL', 'FERIE'], function (i, key) {
-    $('#gvCartellino_DXMainTable tbody tr.dxgvDataRow_MaterialCompact td:contains('+key+')').each(function () {
+  $.each(['TELAV', 'AGIL', 'FERIE', 'RICOM'], function (i, key) {
+    $('#gvCartellino_DXMainTable tbody tr.cart_cell td:contains('+key+')').each(function () {
       $(this).
-        text( $(this).text().replace(' - '+key, '') ).
+        text( $(this).text().replace(' - ', '').replace(key, '') ).
         prepend(icon_tag(giust_icons[key], key));
     });
   });
