@@ -5,7 +5,7 @@
 // @include     https://apps.unipd.it/verificatlv/*
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEX///+bABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABT+/Pz////36uz//v768/TitbvWl594JUBZAAAAD3RSTlMALf3SVOl3rfH+lPvgwffWvIWXAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+UBDhEHMCOeET4AAABcSURBVBjTlY/JDoAgDEShIIuKI4r+/6cqJSxHfYem89KkrRCMJCVGNAFTS8Y6ZLyaNQt0lu9ij0A8xolXnPgpUkpN+GyuO9eVhe1rZbnd1WzqN4Ejmf6tVLSF0j53qQiy0JEdaAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wMS0xNFQxNjowNzo0OCswMTowME/uB4QAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDEtMTRUMTY6MDc6NDgrMDE6MDA+s784AAAAAElFTkSuQmCC
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/verifica-tl.user.js
-// @version     2.0.4
+// @version     2.0.5
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -42,7 +42,7 @@ function to_textarea(selector, rows) {
 if ($('#acavalin').length == 0) {
   var links_hp     = '<a style="text-decoration: underline !important;" href="https://acavalin.com/" target="_blank">A.Cavalin</a>',
       links_script = '<a style="text-decoration: underline !important;" href="https://github.com/acavalin/tp_unipd" target="_blank">VTL script</a>',
-      links_css    = 'position: absolute; top: 0.5rem; left: 15%; padding: 0.3rem 0.6rem; z-index: 65000;'+
+      links_css    = 'position: fixed; top: 0.5rem; left: 15%; padding: 0.3rem 0.6rem; z-index: 65000;'+
         'background: linear-gradient(to bottom, rgb(249, 249, 249) 0%, rgb(241, 241, 241) 100%);'+
         'border-radius: 0.5rem; border: 1px outset red;';
   $('<div id="acavalin" style="'+links_css+'">'+links_script+' by '+links_hp+'</div>').appendTo('body');
