@@ -5,7 +5,7 @@
 // @include     https://presenze.ict.unipd.it/pta/cartellino.aspx*
 // @icon        data:image/png;base64,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
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/planet-time.user.js
-// @version     1.4.1
+// @version     1.5.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -97,6 +97,15 @@ function setup_cartellino () {
   $('#gvCartellino_DXMainTable tbody tr.cart_cell div.pasto').
     replaceWith(icon_tag('pasto', 'buono pasto maturato'));
 
+  // evidenzia richieste effettuate
+  $('#gvCartellino_DXMainTable tbody tr.cart_cell td:nth-child(2)').each(function () {
+    if ($(this).find('sup').length > 0)
+      $(this).css('background-color', 'orange').attr('title', $(this).find('sup').text().trim());
+  });
+  
+  if ($('#gvCartellino_DXMainTable tbody tr.cart_cell td:nth-child(2) sup').length > 0)
+    
+  
   // compatta giorno + monospace
   $('#gvCartellino_DXMainTable tbody tr.cart_cell td:nth-child(2)').
     css('font-family', 'monospace').
