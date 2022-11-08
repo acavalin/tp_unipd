@@ -3,9 +3,10 @@
 // @namespace   camelsoft
 // @description Miglioramenti ai software di EasyStaff
 // @include     https://gestionedidattica.unipd.it/Aule/index.php*
+// @include     https://gestionedidattica.unipd.it/PresenzeStudenti/Corsi.php*
 // @icon        data:image/x-icon;base64,R0lGODlhEAAQAMQAAP/////39/f39/fv7+/v7/fe3t7e3ua9vb29va2trdaclJycnISEhHt7e71aSmNjY7VCKVJSUkJCQjo6OjExMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAQABAAAAVkICCOZCkeSqoEJulAMFS041vcY0PtUSK+pZ1w94tBAIydD7CgFB1QQIQ4IhRJj90kYa0dR4ghZdJ9QR0DpJgiALxiM4AgkVW2DKQwZdGKNEYJOwh9PBI7EjQJE0MRNCMCBngjIQA7
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/easystaff.user.js
-// @version     1.1.2
+// @version     1.2.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -63,5 +64,28 @@
     $('table#ScuoleListCheck tr:first th:nth-child(2)').
       after('<a href="#" onclick="$.er_enh.copy_all_csv(); return false" title="copia negli appunti un CSV con tutti i dati nei popup delle scuole">CSV</a>');
   }// EasyRoom -- location includes "content=gestore_scuole"
+  
+  
+  // EasyBadge
+  if (location.search.includes('action=FrequenzeLezione') && location.search.includes('id_lezione=')) {
+    var posti = $('input.form-control[name="posto"]'),
+        tbody = posti.eq(0).parents('tbody:first');
+    
+    // evidenzia righe con lo stesso codice posto
+    for (var i = 0; i < posti.length; i++) {
+      if (posti.eq(i).data('doppione') || posti.eq(i).val().toLowerCase() == 'xxx')
+        continue;
+      
+      for (var j = i+1; j < posti.length; j++) {
+        if (posti.eq(j).data('doppione') || posti.eq(j).val().toLowerCase() == 'xxx')
+          continue;
+        
+        if (posti.eq(i).val() == posti.eq(j).val())
+          posti.eq(i).add( posti.eq(j) ).
+            data('doppione', true).
+            // evidenzia riga e spostala in testa alla tabella
+            parents('tr').css('background-color', 'lightpink').insertBefore(tbody);
+      }//for
+    }//for
+  }// EasyBadge -- location includes "action=FrequenzeLezione"
 });})(jQuery);
-
