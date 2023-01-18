@@ -8,6 +8,7 @@ Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 * [verifica LA/TL](README.verifica.md)
 * [EasyStaff](README.easystaff.md)
 * [Planet Time](README.planet-time.md)
+* [Shared Gmail](README.gmail-shared.md)
 
 ## Installazione di uno script su Firefox e Chrome
 
