@@ -2,17 +2,18 @@
 // @name        EasyStaff applications enhancements (unipd)
 // @namespace   camelsoft
 // @description Miglioramenti ai software di EasyStaff
+// @include     https://gestionedidattica.unipd.it/MODA/index.php*
 // @include     https://gestionedidattica.unipd.it/Aule/index.php*
 // @include     https://gestionedidattica.unipd.it/PresenzeStudenti/Corsi.php*
 // @icon        data:image/x-icon;base64,R0lGODlhEAAQAMQAAP/////39/f39/fv7+/v7/fe3t7e3ua9vb29va2trdaclJycnISEhHt7e71aSmNjY7VCKVJSUkJCQjo6OjExMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAQABAAAAVkICCOZCkeSqoEJulAMFS041vcY0PtUSK+pZ1w94tBAIydD7CgFB1QQIQ4IhRJj90kYa0dR4ghZdJ9QR0DpJgiALxiM4AgkVW2DKQwZdGKNEYJOwh9PBI7EjQJE0MRNCMCBngjIQA7
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/easystaff.user.js
-// @version     1.2.1
+// @version     1.3.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
 
 // NB: queste due direttive non servono perche' la pagina ha gia' jQuery
-// require     http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
+// require     https://code.jquery.com/jquery-3.7.1.min.js
 //jQuery.noConflict();
 
 (function ($) { $(function () {
@@ -26,7 +27,51 @@
     $('<div id="acavalin" style="'+links_css+'">'+links_script+' by '+links_hp+'</div>').appendTo('body');
   }//if
   
-  $.er_enh = {}
+  $.er_enh = {
+    serialize_inputs: function (inputs) {
+      var params = {};
+      $.map(inputs.serializeArray(), function(p,i) { params[p.name] = p.value; });
+      return params;
+    }//serialize_inputs
+  };//$.er_enh
+  
+  // MODA
+  if (location.pathname.includes('/MODA/') && location.search.includes('content=gestore_ugov_import_launch')) {
+    // nascondi pulsanti distruttivi mai usati, e aggiungi link per il loro toggle
+    $(':submit').filter('[name="_qf_importUGOVForm_import_singolo"], [name="_qf_importUGOVForm_import_new_singolo"]').addClass('bt-import').hide();
+    $('table#structuresTable tr:first th:nth-child(6)').
+      append('<a href="#" onclick="jQuery(\':submit.bt-import\').toggle(); return false">👀<br>toggle</a>');
+    
+    //// sincronizza tutto in sequenza
+    //// @grant       GM_xmlhttpRequest
+    //$.er_enh.sync_next = function () {
+    //  var data = $.er_enh.serialize_inputs($('#importUGOVForm input:not(:submit)'));
+    //  var bt = $(':input[name="_qf_importUGOVForm_update_singolo"]:not(.sync-done):first');
+    //
+    //  var cur_data = $.extend({}, data); // clona dati di partenza
+    //  cur_data.objectID = bt.attr('onclick').replace(/.+, *([0-9]+)\).*/, '$1');
+    //  cur_data._qf_importUGOVForm_update_singolo = bt.val();
+    //  
+    //  var tot  = $(':input[name="_qf_importUGOVForm_update_singolo"]').length;
+    //  var done = $(':input[name="_qf_importUGOVForm_update_singolo"].sync-done').length + 1;
+    //  $('#syncall-counter').text(' '+done+'/'+tot);
+    //  
+    //  console.log(bt.parents('tr:first').find('td:first').text());
+    //  console.log(cur_data);
+    //  
+    //  GM_xmlhttpRequest({
+    //    method: 'POST',
+    //    data: cur_data,
+    //    url: $('#importUGOVForm').attr('action'),
+    //    onload:  $.er_enh.sync_next,
+    //    onerror: function () { alert('ERRORE: alla riga '+bt.parents('tr:first').find('td:first').text()); },
+    //    onabort: function () { alert('ERRORE: alla riga '+bt.parents('tr:first').find('td:first').text()); }
+    //  });
+    //}//$.er_enh.sync_all
+    //// aggiungi pulsante per chiamare $.er_enh.sync_all()
+    //$('table#structuresTable tr:first th:nth-child(5)').
+    //  append('<a href="#" onclick="$.er_enh.sync_next(); return false">♻️<br>sync-all</a><span id="syncall-counter"></span>');
+  }// MODA -- content=gestore_ugov_import_launch
 
   // EasyRoom
   if (location.search.includes('content=gestore_scuole')) {
