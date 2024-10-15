@@ -7,7 +7,7 @@
 // @include     https://gestionedidattica.unipd.it/PresenzeStudenti/Corsi.php*
 // @icon        data:image/x-icon;base64,R0lGODlhEAAQAMQAAP/////39/f39/fv7+/v7/fe3t7e3ua9vb29va2trdaclJycnISEhHt7e71aSmNjY7VCKVJSUkJCQjo6OjExMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAQABAAAAVkICCOZCkeSqoEJulAMFS041vcY0PtUSK+pZ1w94tBAIydD7CgFB1QQIQ4IhRJj90kYa0dR4ghZdJ9QR0DpJgiALxiM4AgkVW2DKQwZdGKNEYJOwh9PBI7EjQJE0MRNCMCBngjIQA7
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/easystaff.user.js
-// @version     1.4.0
+// @version     1.4.1
 // @grant       GM_xmlhttpRequest
 // @connect     didattica.unipd.it
 // @connect     localhost
@@ -42,6 +42,7 @@
     add_error: function (msg, target, options) {
       options ||= {}
       var div = $('<div style="font-weight: bold; background-color: '+(options.color || 'yellow')+'; padding: 0.2rem 0.4rem; margin-bottom: 0.2rem; border: 2px solid red; text-align: left; white-space: pre-wrap;"></div>');
+      if (options.ttip) div.attr('title', options.ttip);
       options.html ? div.html(msg) : div.text(msg);
       div.insertBefore(target);
     },//add_error
@@ -50,36 +51,49 @@
       cerca_assegnazioni_su_ufficio: function (mappa) {
         $('table#confirmReservationsListCheck tr:gt(0)').each(function (i, el) {
           var tr = $(el);
-          var giorno       = tr.find('td:eq(2)').text().trim().substr(0,2);
-          var [da, a]      = tr.find('td:eq(3)').text().trim().split("\n")[0].substr(12).split(' - ');
-          var [aula, sede] = tr.find('td:eq(6)').text().replace(/(.+) \[(.+)\]/, "$1\t$2").split("\t");
-          var fasce        = ((mappa.ass[sede] || {})[aula] || {})[giorno] || [];
+          var giorno  = tr.find('td:eq(2)').text().trim().substr(0,2);
+          var [da, a] = tr.find('td:eq(3)').text().trim().split("\n")[0].substr(12).split(' - ');
           
           // inserisci mailto link
           var td_mail = tr.find('td:eq(7)');
           var [user, mail] = tr.find('td:eq(7)').text().trim().replace(/(.+) \((.+)\)/, "$1\t$2").split("\t");
           if (mail)
             $(`<a href="mailto:${mail}" target="_blank" title="invia email a\n${mail}">@${user}</a>`).appendTo( td_mail.empty() );
+          else
+            mail = tr.find('td:eq(7)').text().trim();
           
           var strutt_utente = mappa.utenti[mail] || [];
-          td_mail.find('a').after( $('<i/>').text(strutt_utente.join(', ')) ).after('<br>');
+          td_mail.append('<br>').append( $('<i/>').text(strutt_utente.join(', ')) );
           
-          // prenotazione.inizio < fascia.fine && prenotazione.fine > fascia.inizio
-          var num_strutt_non_proprie = 0;
-          var strutture = fasce.
-            filter(function (f, i) { return f.da < a && f.a > da; }).
-            map(function(el,i){
-              if (!strutt_utente.includes(el.s))
-                num_strutt_non_proprie += 1;
-              return `${el.s} (${el.da}~${el.a})`;
-            }).join("\n")
-          
+          // incapsula data richiesta per aggiungere i box
           var td_dr = tr.find('td:eq(9)').css('white-space', 'nowrap').find('br').replaceWith(' ').end();
           var msg = $('<div></div>').text( td_dr.text() ).appendTo( td_dr.empty() );
-          if (strutture != '')
-            $.easy_enh.add_error(strutture, msg, {color: num_strutt_non_proprie == 0 ? 'lightgreen' : 'orange'});
           
-          //console.log([strutture, fasce, giorno, da, a, aula, sede]);
+          // parsing colonna Aula ("aula [sede]")
+          tr.find('td:eq(6)').text().trim().split(', ').map(function (i) {
+            var [aula, sede] = i.replace(/(.+) \[(.+)\]/, "$1\t$2").split("\t");
+            var fasce        = ((mappa.ass[sede] || {})[aula] || {})[giorno] || [];
+            
+            // prenotazione.inizio < fascia.fine && prenotazione.fine > fascia.inizio
+            var num_strutt_non_proprie = 0;
+            var strutture = fasce.
+              filter(function (f, i) { return f.da < a && f.a > da; }).
+              map(function(el,i){
+                if (!strutt_utente.includes(el.s))
+                  num_strutt_non_proprie += 1;
+                return `${el.s} (${el.da}~${el.a})`;
+              }).join("\n")
+            
+            if (strutture != '')
+              $.easy_enh.add_error(strutture, msg, {ttip: i, color: num_strutt_non_proprie == 0 ? 'lightgreen' : 'orange'});
+            
+            //console.log([tr.find('td:eq(0)').text().trim(), aula, sede, fasce, giorno, da, a, strutture]);
+          });
+
+          // colonna aula: mostra una riga per elemento e nascondi ", "
+          tr.find('td:eq(6)').contents().filter(function() { return this.nodeType == 3; /* #text */ }).remove();
+          tr.find('td:eq(6) a').css('display', 'block');
+          tr.find('td:eq(6)').css('white-space', 'nowrap');
         });
       }//cerca_assegnazioni_su_ufficio
     }//$.easy_enh.er
@@ -109,7 +123,7 @@
           if (resp.status == 200) {
             $.easy_enh.mappa = resp.response;
             $.easy_enh.er.cerca_assegnazioni_su_ufficio(resp.response);
-            console.log("app ufficio: assegnazioni salvate in $.easy_enh.mappa");
+            console.log("TP: mappa assegnazioni salvate in $.easy_enh.mappa");
           } else
             $.easy_enh.add_error(msg_app_uff, 'table#confirmReservationsListCheck', {html: true});
         },//onload
