@@ -1,5 +1,8 @@
-# otrs-helpdesk.user.js
+# [otrs-helpdesk.user.js](https://github.com/acavalin/tp_unipd/raw/refs/heads/main/otrs-helpdesk.user.js)
+
 Migliora l'usabilità dell'installazione di OTRS (v 3.3.8).
+
+Vedi il [README](https://github.com/acavalin/tp_unipd#installazione-di-uno-script-su-firefox-e-chrome) per le istruzioni di installazione.
 
 ## Configurazione OTRS
 
