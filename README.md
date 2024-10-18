@@ -17,3 +17,5 @@ Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 2. Cliccare sullo script desiderato presente in questa pagina
 3. Premere il pulsante "Raw" sulla destra
 4. Accettare l'installazione dello script
+5. Una tantum su Chrome: imposta la [modalità sviluppatore](https://www.tampermonkey.net/faq.php#Q209)
+   nella pagina [gestisci estensioni](chrome://extensions)
