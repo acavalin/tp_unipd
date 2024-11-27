@@ -8,6 +8,7 @@ Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 * [OTRS](README.otrs.md)
 * [verifica LA/TL](README.verifica.md)
 * [EasyStaff](README.easystaff.md)
+* [SUA MIUR](README.sua.md)
 * [Planet Time](README.planet-time.md)
 * [Shared Gmail](README.gmail-shared.md)
 
