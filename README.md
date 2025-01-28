@@ -12,6 +12,11 @@ Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 * [Planet Time](README.planet-time.md)
 * [Shared Gmail](README.gmail-shared.md)
 
+Modificare lo script dopo l'installazione inserendo le credenziali:
+
+* [UniPd SSO auto login](https://github.com/acavalin/tp_unipd/raw/refs/heads/main/autologin_sso.user.js)
+* [RedMine SCM auto login](https://github.com/acavalin/tp_unipd/raw/refs/heads/main/autologin_redmine.user.js)
+
 ## Installazione di uno script su Firefox e Chrome
 
 1. Installare l'add-on [Tampermonkey](http://tampermonkey.net/)
