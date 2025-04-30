@@ -6,11 +6,12 @@ dell'universita' di Padova.
 Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 
 * [OTRS](README.otrs.md)
-* [verifica LA/TL](README.verifica.md)
+* [Rendicontazione lavoro a distanza](README.rend-lav-dist.md)
 * [EasyStaff](README.easystaff.md)
 * [SUA MIUR](README.sua.md)
 * [Planet Time](README.planet-time.md)
 * [Shared Gmail](README.gmail-shared.md)
+* [verifica LA/TL](README.verifica.md) **obsoleti**
 
 Modificare lo script dopo l'installazione inserendo le credenziali:
 
