@@ -5,7 +5,7 @@
 // @include     https://apps.unipd.it/lavoroadistanza/*
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEX///+bABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABT+/Pz////36uz//v768/TitbvWl594JUBZAAAAD3RSTlMALf3SVOl3rfH+lPvgwffWvIWXAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+UBDhEHMCOeET4AAABcSURBVBjTlY/JDoAgDEShIIuKI4r+/6cqJSxHfYem89KkrRCMJCVGNAFTS8Y6ZLyaNQt0lu9ij0A8xolXnPgpUkpN+GyuO9eVhe1rZbnd1WzqN4Ejmf6tVLSF0j53qQiy0JEdaAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wMS0xNFQxNjowNzo0OCswMTowME/uB4QAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDEtMTRUMTY6MDc6NDgrMDE6MDA+s784AAAAAElFTkSuQmCC
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/rend-lav-dist.user.js
-// @version     1.2.0
+// @version     1.3.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -19,6 +19,16 @@ $('#navbarSupportedContent h4').html('<span class="fa fa-home" style="vertical-a
 $('nav.navbar').css('padding', '0 1rem');
 $('.navbar-brand img').css('max-height', '1rem');
 $('.navbar-nav.nav-button a').css('border-width', 0);
+
+// riquadro credits + links
+if ($('#acavalin').length == 0) {
+  var links_hp     = '<a style="text-decoration: underline !important;" href="https://acavalin.com/" target="_blank">A.Cavalin</a>',
+      links_script = '<a style="text-decoration: underline !important;" href="https://github.com/acavalin/tp_unipd" target="_blank">script</a>',
+      links_css    = 'position: fixed; top: 0.5rem; left: 43%; padding: 0.3rem 0.6rem; z-index: 65000;'+
+        'background: linear-gradient(to bottom, rgb(249, 249, 249) 0%, rgb(241, 241, 241) 100%);'+
+        'border-radius: 0.5rem; border: 1px outset red;';
+  $('<div id="acavalin" style="'+links_css+'">'+links_script+' by '+links_hp+'</div>').appendTo('body');
+}//if
 
 if (location.pathname.match('/lavoroadistanza/attivita/edit/')) {
   // align-top mese
