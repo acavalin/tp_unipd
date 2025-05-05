@@ -5,7 +5,7 @@
 // @include     https://apps.unipd.it/lavoroadistanza/*
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEX///+bABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABT+/Pz////36uz//v768/TitbvWl594JUBZAAAAD3RSTlMALf3SVOl3rfH+lPvgwffWvIWXAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+UBDhEHMCOeET4AAABcSURBVBjTlY/JDoAgDEShIIuKI4r+/6cqJSxHfYem89KkrRCMJCVGNAFTS8Y6ZLyaNQt0lu9ij0A8xolXnPgpUkpN+GyuO9eVhe1rZbnd1WzqN4Ejmf6tVLSF0j53qQiy0JEdaAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wMS0xNFQxNjowNzo0OCswMTowME/uB4QAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDEtMTRUMTY6MDc6NDgrMDE6MDA+s784AAAAAElFTkSuQmCC
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/rend-lav-dist.user.js
-// @version     1.3.0
+// @version     1.3.1
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -36,11 +36,12 @@ if (location.pathname.match('/lavoroadistanza/attivita/edit/')) {
 
   // giorni scrollabili
   $('#listGiorni').
-  css('display', 'block').
-  css('height', '2rem').
-  css('overflow', 'scroll').
-  css('border', '1px solid black').
-  css('border-radius', '1rem');
+    css('display', 'block').
+    css('height', '2rem').
+    css('overflow', 'scroll').
+    css('border', '1px solid black').
+    css('border-radius', '1rem').
+    find('div[role="option"]').css('margin', 'auto').css('width', 'auto');
   // conta giorni
   let sel_all_gg = $('.dx-list-select-all .dx-list-select-all-label');
   sel_all_gg.text(sel_all_gg.text() + ` (${$('.dx-list-select-all').nextAll().length})`);
@@ -60,16 +61,20 @@ if (location.pathname.match('/lavoroadistanza/attivita/edit/')) {
 
   $('#txtAttivita').focus();
 
-  // modifica righe del testo
+  // modifica righe del testo al salvataggio
   $('button.bt-salva').click(function () {
     let t = $('#txtAttivita');
     let righe = t.val().split("\n").map(function (i) {
       return i.
-      replace(/ +\(~.+\) *$/, "").  // commento finale tra tonde
-      trim();
+        replace(/ +\(~.+\) *$/, "").  // rimuovi commento finale tra tonde
+        replace(/[;.,]*$/, '.').
+        trim();
     });
     righe = [...new Set(righe)]; // rimuovi duplicati
     t.val( righe.sort().join("\n").trim() );
+
+    let giorni = $('#listGiorni .giorno');
+    $('#txtNote').val(`${giorni.first().text().trim()} ~ ${giorni.last().text().trim()}`);
   });
 
   // shortcuts da tastiera
