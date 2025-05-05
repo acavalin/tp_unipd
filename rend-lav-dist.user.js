@@ -5,7 +5,7 @@
 // @include     https://apps.unipd.it/lavoroadistanza/*
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEX///+bABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABT+/Pz////36uz//v768/TitbvWl594JUBZAAAAD3RSTlMALf3SVOl3rfH+lPvgwffWvIWXAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+UBDhEHMCOeET4AAABcSURBVBjTlY/JDoAgDEShIIuKI4r+/6cqJSxHfYem89KkrRCMJCVGNAFTS8Y6ZLyaNQt0lu9ij0A8xolXnPgpUkpN+GyuO9eVhe1rZbnd1WzqN4Ejmf6tVLSF0j53qQiy0JEdaAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wMS0xNFQxNjowNzo0OCswMTowME/uB4QAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDEtMTRUMTY6MDc6NDgrMDE6MDA+s784AAAAAElFTkSuQmCC
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/rend-lav-dist.user.js
-// @version     1.3.2
+// @version     1.3.4
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -64,14 +64,14 @@ if (location.pathname.match('/lavoroadistanza/attivita/edit/')) {
   // modifica righe del testo al salvataggio
   $('button.bt-salva, button.bt-conferma').click(function () {
     let t = $('#txtAttivita');
-    let righe = t.val().split("\n").map(function (i) {
+    let righe = t.val().trim().split("\n").map(function (i) {
       return i.
         replace(/ +\(~.+\) *$/, "").  // rimuovi commento finale tra tonde
-        replace(/[;.,]*$/, '.').
+        replace(/[;.,]*$/, ';').
         trim();
     });
     righe = [...new Set(righe)]; // rimuovi duplicati
-    t.val( righe.sort().join("\n").trim() );
+    t.val( righe.sort().join("\n").trim().replace(/[;,.]$/, '.') );
 
     let giorni = $('#listGiorni .giorno');
     $('#txtNote').val(`${giorni.first().text().trim()} ~ ${giorni.last().text().trim()}`);
