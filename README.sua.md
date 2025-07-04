@@ -9,3 +9,4 @@ Vedi il [README](https://github.com/acavalin/tp_unipd#installazione-di-uno-scrip
   * metti a destra in un box scrollabile le sezioni Comunicazioni e Accreditamento
   * sposta testo dentro ai link con l'iconcina
 * SUA-CdS 20XX > Visualizza Schede: raccolta dati dei CdS in file TSV
+* SUA-CdS 20XX > Docenti di riferimento e Figure Specialistiche: trasformazione dati in file TSV
