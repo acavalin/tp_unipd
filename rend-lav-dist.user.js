@@ -5,7 +5,7 @@
 // @include     https://apps.unipd.it/lavoroadistanza/*
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARVBMVEX///+bABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABSbABT+/Pz////36uz//v768/TitbvWl594JUBZAAAAD3RSTlMALf3SVOl3rfH+lPvgwffWvIWXAAAAAWJLR0QAiAUdSAAAAAd0SU1FB+UBDhEHMCOeET4AAABcSURBVBjTlY/JDoAgDEShIIuKI4r+/6cqJSxHfYem89KkrRCMJCVGNAFTS8Y6ZLyaNQt0lu9ij0A8xolXnPgpUkpN+GyuO9eVhe1rZbnd1WzqN4Ejmf6tVLSF0j53qQiy0JEdaAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wMS0xNFQxNjowNzo0OCswMTowME/uB4QAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDEtMTRUMTY6MDc6NDgrMDE6MDA+s784AAAAAElFTkSuQmCC
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/rend-lav-dist.user.js
-// @version     1.3.4
+// @version     1.4.0
 // @grant       none
 // @license     GPLv3
 // ==/UserScript==
@@ -29,6 +29,11 @@ if ($('#acavalin').length == 0) {
         'border-radius: 0.5rem; border: 1px outset red;';
   $('<div id="acavalin" style="'+links_css+'">'+links_script+' by '+links_hp+'</div>').appendTo('body');
 }//if
+
+if (location.pathname.match('/lavoroadistanza/attivita/list')) {
+  // nascondi righe approvate
+  setTimeout(function(){ $('#gridAttivita .dx-datagrid-rowsview table td:contains("Approvato")').parent().hide(); }, 500);
+}//if location = /lavoroadistanza/attivita/list
 
 if (location.pathname.match('/lavoroadistanza/attivita/edit/')) {
   // align-top mese
@@ -96,6 +101,6 @@ if (location.pathname.match('/lavoroadistanza/attivita/edit/')) {
       if (ev.key == 'Backspace') { ev.preventDefault(); $('button.bt-indietro').click(); }
     }//if
   });// bind keyboard shortcuts
-}//edit
+}//if location = /lavoroadistanza/attivita/edit
 //------------------------------------------------------------------------------
 });})(jQuery);

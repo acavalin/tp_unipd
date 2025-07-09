@@ -10,3 +10,4 @@ Vedi il [README](https://github.com/acavalin/tp_unipd#installazione-di-uno-scrip
 * edit: textarea ingrandita + autofocus
 * edit: pulsanti colorati + scorciatoie (Ctrl+S, Alt+Invio, Alt+Backspace)
 * edit: ordinamento automatico delle righe + eliminazione duplicati
+* stato: nascondi righe approvate
