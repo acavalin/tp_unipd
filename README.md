@@ -10,6 +10,7 @@ Vedere il `README.xxx.md` relativo allo script `xxx` desiderato:
 * [EasyStaff](README.easystaff.md)
 * [SUA MIUR](README.sua.md)
 * [Planet Time](README.planet-time.md)
+* [Rubrica](README.rubrica-presenze.md)
 * [Shared Gmail](README.gmail-shared.md)
 * [verifica LA/TL](README.verifica.md) **obsoleti**
 
