@@ -10,9 +10,9 @@ Vedi il [README](https://github.com/acavalin/tp_unipd#installazione-di-uno-scrip
 
 Gli elenchi (*Visualizza le mie code* e *Visualizzazione stato*) devono essere
 nel formato "Piccolo", cliccate sulla lettera `S` in alto a destra dove vedete
-i tre quadratini `S M L`
+i tre quadratini `S M L`.
 
-Le colonne nelle videate **devono** riportare nell'ordine i seguenti campi:
+Per un'esperienza ottimale vi consiglio di rendere visibili le seguenti colonne:
 
 1. TicketNumber
 2. Tempo trascorso
@@ -21,15 +21,15 @@ Le colonne nelle videate **devono** riportare nell'ordine i seguenti campi:
 5. Gestisci
 6. Operatore
 7. Coda
+8. Modificato
 
 per modificare l'elenco e l'ordine delle colonne dovete cliccare sul triangolino
 situato sull'estrema destra dell'intestazione (qui vi consiglio anche di impostare
 il numero più elevato di righe per pagina).
-Potete aggiungere quanti campi volete **dopo** la colonna 7.
 
 ### Visualizzazione "Cruscotto"
 
-Le colonne nelle videate **devono** riportare nell'ordine i seguenti campi:
+Per un'esperienza ottimale vi consiglio di rendere visibili le seguenti colonne:
 
 1. TicketNumber
 2. Tempo trascorso
@@ -39,11 +39,11 @@ Le colonne nelle videate **devono** riportare nell'ordine i seguenti campi:
 6. Gestisci
 7. Operatore
 8. Coda
+9. Modificato
 
 per modificare l'elenco e l'ordine delle colonne dovete cliccare sull'ingranaggio
 situato sull'estrema destra dell'intestazione della tabella "Ticket Aperti"
 (viene mostrato quando ci passate sopra col mouse).
-Potete aggiungere quanti campi volete **dopo** la colonna 7.
 
 ## Migliorie generali
 
@@ -61,6 +61,7 @@ Potete aggiungere quanti campi volete **dopo** la colonna 7.
 * colonna tempo più leggibile
 * ridimensionate le colonne per dare più spazio all'oggetto
 * colonna coda: mostra solo il nome
+* colonna Modificato accorciata e giorno odierno evidenziato
 
 ## Migliorie dettaglio ticket
 
