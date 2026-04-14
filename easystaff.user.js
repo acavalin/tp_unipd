@@ -7,10 +7,9 @@
 // @include     https://gestionedidattica.unipd.it/PresenzeStudenti/Corsi.php*
 // @icon        data:image/x-icon;base64,R0lGODlhEAAQAMQAAP/////39/f39/fv7+/v7/fe3t7e3ua9vb29va2trdaclJycnISEhHt7e71aSmNjY7VCKVJSUkJCQjo6OjExMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAQABAAAAVkICCOZCkeSqoEJulAMFS041vcY0PtUSK+pZ1w94tBAIydD7CgFB1QQIQ4IhRJj90kYa0dR4ghZdJ9QR0DpJgiALxiM4AgkVW2DKQwZdGKNEYJOwh9PBI7EjQJE0MRNCMCBngjIQA7
 // @downloadURL https://github.com/acavalin/tp_unipd/raw/main/easystaff.user.js
-// @version     1.4.1
+// @version     1.4.2
 // @grant       GM_xmlhttpRequest
 // @connect     didattica.unipd.it
-// @connect     localhost
 // @license     GPLv3
 // ==/UserScript==
 
@@ -33,6 +32,8 @@
   }//if
 
   $.easy_enh = {
+    api_ufficio: 'ufficio.didattica.unipd.it',
+    
     serialize_inputs: function (inputs) {
       var params = {};
       $.map(inputs.serializeArray(), function(p,i) { params[p.name] = p.value; });
@@ -94,6 +95,14 @@
           tr.find('td:eq(6)').contents().filter(function() { return this.nodeType == 3; /* #text */ }).remove();
           tr.find('td:eq(6) a').css('display', 'block');
           tr.find('td:eq(6)').css('white-space', 'nowrap');
+          
+          //tr.find('td:eq(11) > div').attr('id').replace(/parent_op_confirm_(\d+)_.*/, '$1')
+          
+          // https://developer.mozilla.org/en-US/docs/Web/API/Window/open
+          //window.open(`https://${$.easy_enh.api_ufficio}`, 'mypren', 'popup=true,width=400,height=400,left=500,top=200')
+          
+          // https://learn.jquery.com/ajax/working-with-jsonp/
+          //JSONP: $.ajax({url: `https://${$.easy_enh.api_ufficio}/er/bacheca/mappa_assegnazioni.json?callback=alert&msg=pippo`, jsonp: "callback", dataType: 'jsonp', data: {msg: 'ciao'}, success: function (resp) { console.log(resp); }})
         });
       }//cerca_assegnazioni_su_ufficio
     }//$.easy_enh.er
@@ -106,8 +115,15 @@
     if (typeof disable_f5 == 'function')
       $(document).off("keydown", disable_f5);
 
+    var mini_header = $('body > table:first tr:eq(0) td').css('text-align', 'right');
+    var main_header = $('#headergrid');
+    if (main_header.length > 0) {
+      main_header.find('tr:eq(0) td:first a').clone().empty().text('E.R.').appendTo(mini_header)
+      main_header.find('tr:eq(0) td:last  a').clone().text('E.A.').prependTo(mini_header);
+    }//if
+    
     if (location.search.includes('content=gestore_conferma_prenotazioni')) {
-      var msg_app_uff = 'Errore lettura assegnazioni dall\'app <a href="https://ufficio.didattica.unipd.it" target="_blank">ufficio</a>! (Hai fatto il login?)';
+      var msg_app_uff = `Errore lettura assegnazioni dall\'app <a href="https://${$.easy_enh.api_ufficio}" target="_blank">ufficio</a>! (Hai fatto il login?)`;
       
       // allinea celle a sx
       $('table#confirmReservationsListCheck tr:gt(0) td').
@@ -116,7 +132,7 @@
       // carica assegnazioni dall'app ufficio.didattica.unipd.it
       GM_xmlhttpRequest({
         method: 'GET',
-        url: 'https://ufficio.didattica.unipd.it/er/bacheca/mappa_assegnazioni.json',
+        url: `https://${$.easy_enh.api_ufficio}/er/bacheca/mappa_assegnazioni.json`,
         nocache: true,
         responseType: 'json',
         onload:  function (resp) {
