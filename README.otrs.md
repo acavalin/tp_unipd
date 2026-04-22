@@ -87,3 +87,4 @@ situato sull'estrema destra dell'intestazione della tabella "Ticket Aperti"
 ## Migliorie lato customer
 
 * nascoste le righe di sistema
+* mostra data e ora di ogni riga
