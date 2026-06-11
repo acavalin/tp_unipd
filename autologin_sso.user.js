@@ -5,9 +5,10 @@
 // @include     https://shibidp.cca.unipd.it/*
 // @include     https://sso.cca.unipd.it/*
 // @include     https://lais.dpss.psy.unipd.it/realms/r1/protocol/*
+// @include     https://osticket.dpss.psy.unipd.it/scp/login.php
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAM1BMVEVrGhQTDQVLDwA8Kwa7JQCFPgBbVjZvVgX8NwDIfAD6gAC8mAmhnVn5pgD20Rnv4GHt6JOekpO9AAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAALhgAAC4YASqqJyAAAAAHdElNRQfhBBMJDTA6RklYAAABP0lEQVQ4y5WTi24EIQhFBxTxAY7//7UFd5tUZtukZDIP7/HiIF7XP6P8Mg7vuAZ8j4SJstayG0x+KSlYwVp2GVV0f/OAYAHF9FtEyN6TKktc3Lrve3KnDkUqjhEMLnF95N5JbmYliRlMnpNrpXUTZpocDJIbmEPliQStxQQXz2EOE9Agzml8ACxUJyuzrfShu4NZqP0fAjV+AmkYoaq9UULqLZbpgtmGDu29NbtZxCzQ1A3U1RcSiUS+uh1jY/1psYdzJ/sbq3jNkaA9PZMDSrnWE6AKhrSOjdiAFoG0iwvK3lYJFOtPYMmcyV8G78TeVgdQREwv8GoCsV0DS1kfXSl7j4t1hj3xBIo7lFefpuTpsOZj+owbnM8M0DqdVTkNvAz51OtjOxH/1Pey3oOQK8LHA4rZwzobfj3blihO/gIvEw2PIesy/wAAAABJRU5ErkJggg==
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
-// @version     1.1.1
+// @version     1.2.0
 // @grant       none
 // ==/UserScript==
 
@@ -16,9 +17,11 @@ jQuery.noConflict();
 (function ($) { $(function () {
 // -----------------------------------------------------------------------------
 setTimeout(function () {
-  if (window.location.host == "lais.dpss.psy.unipd.it") {
+  if (window.location.host == "lais.dpss.psy.unipd.it")
     document.querySelector('#social-unipd').click();
-  } else {
+  else if (window.location.host == "osticket.dpss.psy.unipd.it")
+    document.querySelector('.external-sign-in').click();
+  else {
     $(':text').val('alberto.cavalin');
     $(':password').val("password");
     if ($('div:contains(La password immessa non è corretta.)').length == 0)
